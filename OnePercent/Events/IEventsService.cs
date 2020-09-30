@@ -6,6 +6,6 @@ namespace OnePercent.Events
 {
     public interface IEventsService
     {
-        Task<IEnumerable<Event>> CreateEventProposal(IEnumerable<Want> wants);
+        Task<IReadOnlyList<Event>> GetEventSeriesProposalAsync(IReadOnlyCollection<Want> wants);
     }
 }

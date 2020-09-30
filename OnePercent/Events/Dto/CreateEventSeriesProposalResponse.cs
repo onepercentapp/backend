@@ -5,6 +5,6 @@ namespace OnePercent.Events.Dto
 {
     public class CreateEventSeriesProposalResponse
     {
-        public IEnumerable<Event> Events { get; set; }
+        public IReadOnlyList<Event> Events { get; set; }
     }
 }

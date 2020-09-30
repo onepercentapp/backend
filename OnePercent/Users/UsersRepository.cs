@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using OnePercent.Infrastructure.Data;
+using OnePercent.Users.Models;
 
 namespace OnePercent.Users
 {
@@ -15,7 +16,12 @@ namespace OnePercent.Users
 
         public async Task<User> FindAsync(Guid id)
         {
-            return await _dbContext.Set<User>().FindAsync(id);
+            return new User
+            {
+                Id = Guid.Parse("c1cb15eb-47fa-4c49-95ec-cd3f6410b804"),
+                Created = DateTimeOffset.Now,
+                Updated = DateTimeOffset.Now
+            };
         }
     }
 }

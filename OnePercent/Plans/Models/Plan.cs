@@ -1,21 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace OnePercent.Events.Models
+namespace OnePercent.Plans.Models
 {
-    public class Event
+    public class Plan
     {
         public Guid Id { get; set; }
 
         public Guid CreatorId { get; set; }
 
-        public string Summary { get; set; }
-
-        public DateTimeOffset Start { get; set; }
-
-        public DateTimeOffset End { get; set; }
-
-        public Guid StepId { get; set; }
+        public IList<Step> Steps { get; } = new List<Step>();
 
         [JsonIgnore] public DateTimeOffset Created { get; set; }
 

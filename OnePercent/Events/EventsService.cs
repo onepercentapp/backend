@@ -7,7 +7,7 @@ namespace OnePercent.Events
 {
     public class EventsService : IEventsService
     {
-        public async Task<IEnumerable<Event>> CreateEventProposal(IEnumerable<Want> wants)
+        public async Task<IReadOnlyList<Event>> GetEventSeriesProposalAsync(IReadOnlyCollection<Want> wants)
         {
             var result = new List<Event>();
 

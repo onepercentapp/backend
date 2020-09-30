@@ -5,6 +5,6 @@ namespace OnePercent.Events.Dto
 {
     public class CreateEventSeriesProposalRequest
     {
-        public IEnumerable<Want> Wants { get; set; }
+        public IReadOnlyCollection<Want> Wants { get; set; }
     }
 }

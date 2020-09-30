@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OnePercent.Events.Dto;
-using OnePercent.Events.Models;
 
 namespace OnePercent.Events
 {
@@ -23,13 +20,16 @@ namespace OnePercent.Events
         }
 
         [HttpGet]
-        [Route("create-event-series-proposal")]
-        public async Task<IEnumerable<Event>> CreateEventSeriesProposal(
+        [Route("event-series-proposal")]
+        public async Task<CreateEventSeriesProposalResponse> CreateEventSeriesProposal(
             [FromBody] CreateEventSeriesProposalRequest request)
         {
-            _logger.LogInformation(JsonSerializer.Serialize(request));
+            var eventSeriesProposal = await _eventsService.GetEventSeriesProposalAsync(request.Wants);
 
-            return await _eventsService.CreateEventProposal(request.Wants);
+            return new CreateEventSeriesProposalResponse
+            {
+                Events = eventSeriesProposal
+            };
         }
     }
 }

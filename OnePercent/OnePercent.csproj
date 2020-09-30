@@ -12,11 +12,17 @@
     <Folder Include="Infrastructure\Data\" />
     <Folder Include="Events\Dto\" />
     <Folder Include="Events\Models\" />
+    <Folder Include="Plans\" />
+    <Folder Include="Plans\Models\" />
+    <Folder Include="Users\Models\" />
+    <Folder Include="Plans\Dto\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="WeatherForecast.cs" />
+    <Compile Remove="Plans\Dto\PlanDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.8" />
   </ItemGroup>
 </Project>

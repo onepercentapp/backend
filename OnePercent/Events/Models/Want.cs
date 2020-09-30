@@ -7,8 +7,8 @@ namespace OnePercent.Events.Models
     {
         public DateTimeOffset Date { get; set; }
 
-        public IEnumerable<FreeTimeInterval> FreeTimeIntervals { get; set; }
+        public IReadOnlyList<FreeTimeInterval> FreeTimeIntervals { get; set; }
 
-        public IEnumerable<WantItem> WantItems { get; set; }
+        public IReadOnlyCollection<WantItem> WantItems { get; set; }
     }
 }
